@@ -1,0 +1,25 @@
+{
+  "$schema": "https://sly-cli.fly.dev/registry/config.v2.json",
+  "config": {
+    "icons": {},
+    "components": {},
+    "utils": {}
+  },
+  "libraries": {
+    "@shadcn/ui": {
+      "config": {
+        "directory": "./src/components",
+        "postinstall": [],
+        "transformers": []
+      }
+    },
+    "iconify:akar-icons": {
+      "name": "Akar Icons",
+      "config": {
+        "directory": "./svg_icons/akari_icons",
+        "postinstall": [],
+        "transformers": []
+      }
+    }
+  }
+}
