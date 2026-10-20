@@ -1,3 +1,9 @@
+"use client";
+
 export default function TasksPage() {
-  return <div>Tasks Page</div>;
+  return (
+    <main>
+      <h1>Tasks Page</h1>
+    </main>
+  );
 }

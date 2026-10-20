@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   output: "export",
+  allowedDevOrigins: ["wireless-kiln-departure.ngrok-free.dev"],
 };
 
 export default nextConfig;

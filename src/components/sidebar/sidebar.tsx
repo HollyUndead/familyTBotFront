@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarMain}>
-        <Link className={styles.brand} href="/tasks">
+        <Link className={styles.brand} href="/">
           <Icon name="akari_icons/check-box-fill" className={styles.brandMark}>
             <span className={styles.brandText}>
               <span className={styles.brandName}>Family</span>

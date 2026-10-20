@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/sidebar";
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <AuthProvider>
           <Sidebar />
-          {children}
+          <Suspense fallback={<div aria-busy="true">Loading...</div>}>
+            {children}
+          </Suspense>
         </AuthProvider>
       </body>
     </html>

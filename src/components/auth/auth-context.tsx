@@ -2,21 +2,21 @@
 
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-type User = {
-  id: string;
-  name: string;
-  email: string;
-};
+// type User = {
+//   id: string;
+//   name: string;
+//   email: string;
+// };
 
 type AuthContextValue = {
-  user: User | null;
-  setUser: (user: User | null) => void;
+  user: unknown;
+  setUser: (user: unknown) => void;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<unknown>(null);
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
