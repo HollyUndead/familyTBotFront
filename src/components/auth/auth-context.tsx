@@ -1,23 +1,35 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 
-// type User = {
-//   id: string;
-//   name: string;
-//   email: string;
-// };
+type User = {
+  userId: number;
+  userName: string;
+  assignedTasks: unknown[];
+  completedTasks: unknown[];
+  overdueTasks: unknown[];
+  starHistory: unknown[];
+  authOnWeb: boolean;
+};
 
 type AuthContextValue = {
-  user: unknown;
-  setUser: (user: unknown) => void;
+  user: User | null;
+  setUser: (user: User | null) => void;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<unknown>(null);
-
+  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    sessionStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       {children}
@@ -31,6 +43,7 @@ export function useAuth() {
   if (!context) {
     throw new Error("useAuth must be used inside AuthProvider");
   }
+  // console.log("context:", context.user);
 
   return context;
 }

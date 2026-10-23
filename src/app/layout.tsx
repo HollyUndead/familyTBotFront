@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/sidebar/sidebar";
-import { AuthProvider } from "@/components/auth/auth-context";
+import AppShell from "@/components/app-shell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <AuthProvider>
-          <Sidebar />
-          <Suspense fallback={<div aria-busy="true">Loading...</div>}>
-            {children}
-          </Suspense>
-        </AuthProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

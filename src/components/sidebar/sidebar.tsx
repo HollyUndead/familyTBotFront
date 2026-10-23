@@ -1,7 +1,8 @@
-import SignedInPlate from "../signedInPlate/signedInPlate";
+import SignedInPlate from "../userPlate/userPlate";
 import Link from "next/link";
 import styles from "./sidebar.module.scss";
 import { Icon } from "../Icon/icon";
+import UserPlate from "../userPlate/userPlate";
 
 export default function Sidebar() {
   return (
@@ -48,7 +49,7 @@ export default function Sidebar() {
       </div>
 
       <div className={styles.account}>
-        <SignedInPlate />
+        <UserPlate />
       </div>
     </aside>
   );
