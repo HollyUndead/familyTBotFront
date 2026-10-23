@@ -1,7 +1,7 @@
 const backBaseUrl = "https://wireless-kiln-departure.ngrok-free.dev/api";
 
 export async function getMyUser(signal?: AbortSignal) {
-  const response = await fetch(`${backBaseUrl}/telegramauth/me`, {
+  const response = await fetch(`${backBaseUrl}/userbase/me`, {
     headers: {
       Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
@@ -16,7 +16,7 @@ export async function getMyUser(signal?: AbortSignal) {
 }
 
 export async function getAllUsers(signal?: AbortSignal) {
-  const response = await fetch(`${backBaseUrl}/telegramauth/users`, {
+  const response = await fetch(`${backBaseUrl}/userbase/users`, {
     headers: {
       Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },

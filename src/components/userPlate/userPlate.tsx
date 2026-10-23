@@ -4,5 +4,10 @@ import { useAuth } from "../auth/auth-context";
 
 export default function UserPlate() {
   const { user } = useAuth();
-  return <div>{user?.userName}</div>;
+  return (
+    <div>
+      {user?.avatarUrl && <img src={user.avatarUrl} alt="" />}
+      {user?.userName}
+    </div>
+  );
 }

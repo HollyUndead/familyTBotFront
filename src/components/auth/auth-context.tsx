@@ -15,7 +15,7 @@ type User = {
   completedTasks: unknown[];
   overdueTasks: unknown[];
   starHistory: unknown[];
-  authOnWeb: boolean;
+  avatarUrl: string;
 };
 
 type AuthContextValue = {
